@@ -1,4 +1,4 @@
-# FinMetrics |MERN Finance Dashboard App that has Machine Learning Predictions
+# FinMetrics | MERN Finance Dashboard App that has Machine Learning Predictions
 ```Vite, React, Typescript, Redux Toolkit, MUI, Recharts, Node Js, Express Js, MongoDB ```
 
 ![My Image](image1.jpg)
