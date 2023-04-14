@@ -22,12 +22,6 @@ import {
   Area,
 } from "recharts";
 
-interface MonthlyData {
-  month: any;
-  revenue: any;
-  expenses: any;
-}
-
 const Row1 = () => {
   const { palette } = useTheme();
   const { data } = useGetKpisQuery();
@@ -36,7 +30,7 @@ const Row1 = () => {
   const revenueExpenses = useMemo(() => {
     return (
       data &&
-      data[0].monthlyData.map(({ month, revenue, expenses }: MonthlyData) => {
+      data[0].monthlyData.map(({ month, revenue, expenses }) => {
         return {
           name: month.substring(0, 3),
           revenue: revenue,
