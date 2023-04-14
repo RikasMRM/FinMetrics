@@ -1,5 +1,6 @@
 # FinMetrics | A MERN Finance Dashboard App
 ```Machine Learning, Typescript, React, Node, MUI ```
+
 ![My Image](image1.jpg)
 ![My Image](image2.jpg)
 
