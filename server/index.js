@@ -6,6 +6,16 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 
+// ** Custom Input to DB
+import { kpis, products, transactions } from "./data/data.js";
+
+// ** ROUTES IMPORT
+import kpiRoutes from "./routes/kpi.js"
+
+// ** MODELS IMPORT
+import KPI from "./models/KPI.js";
+
+
 // ** CONFIGURATIONS
 dotenv.config();
 const app = express();
@@ -17,6 +27,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
+// ** ROUTES 
+app.use("/kpi",kpiRoutes)
+
 // ** MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
 
@@ -27,5 +40,12 @@ mongoose
   })
   .then(async () => {
     app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+
+    // ** ADD DATA ONE TIME ONLY
+    // await mongoose.connection.db.dropDatabase();
+    // KPI.insertMany(kpis);
+    // Product.insertMany(products);
+    // Transaction.insertMany(transactions);
+
   })
   .catch((error) => console.log(`${error} did not connect`));
